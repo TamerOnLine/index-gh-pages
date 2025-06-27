@@ -1,0 +1,24 @@
+[project]
+name = "index-gh-pages"
+version = "0.1.0"
+description = "CLI tool to convert README.md to index.md and build MkDocs documentation."
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+authors = [
+  { name = "Tamer Hamad Faour", email = "info@denkengewinnen.com" }
+]
+dependencies = [
+  "mkdocs",
+  "click"
+]
+
+[project.scripts]
+indexgh = "index_gh_pages.cli:main"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["index_gh_pages*"]

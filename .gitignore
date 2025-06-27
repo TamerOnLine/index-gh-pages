@@ -4,8 +4,11 @@ __pycache__/
 *$py.class
 *.code-workspace
 *.exe
-summary_tree.txt
-generate_tree.py
+gitingest.txt
+*info/
+publish.py
+publish_test.py
+setup.py
 
 # C extensions
 *.so

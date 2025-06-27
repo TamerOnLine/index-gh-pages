@@ -1,0 +1,20 @@
+📁 index-gh-pages/
+├── 📁 index_gh_pages/
+│   ├── __init__.py
+│   ├── cli.py
+│   ├── mkdocs.yml
+│   └── utils.py
+├── 📁 scripts/
+│   ├── build_all.py
+│   ├── prepare_docs.py
+│   └── setup_docs_structure.py
+├── 📁 vscode/
+│   ├── launch.json
+│   └── tasks.json
+├── .gitignore
+├── CODE_OF_CONDUCT.md
+├── LICENSE
+├── README.md
+├── create-venv.py
+├── pyproject.toml
+└── requirements.txt
