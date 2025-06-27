@@ -50,7 +50,13 @@ def fix_links(content: str) -> str:
     return content
 
 def prepare_readme(readme_path="README.md", output_path="docs/index.md"):
+    if not os.path.exists(readme_path):
+        print(f"⚠️ README.md not found at {readme_path}. Creating a default one...")
+        with open(readme_path, "w", encoding="utf-8") as f:
+            f.write("# Welcome to index-gh-pages\n\nThis is a generated README.md.\n")
+
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
     with open(readme_path, "r", encoding="utf-8") as f:
         content = f.read()
 
