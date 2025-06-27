@@ -53,7 +53,12 @@ def prepare_readme(readme_path="README.md", output_path="docs/index.md"):
     if not os.path.exists(readme_path):
         print(f"⚠️ README.md not found at {readme_path}. Creating a default one...")
         with open(readme_path, "w", encoding="utf-8") as f:
-            f.write("# Welcome to index-gh-pages\n\nThis is a generated README.md.\n")
+            f.write(
+                "# Welcome to index-gh-pages\n\n"
+                "This is a generated README.md.\n\n"
+                "📘 **For inquiries, please contact us or visit the "
+                "[Documentation Website](https://tameronline.github.io/index-gh-pages/).**\n"
+            )
 
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
 
