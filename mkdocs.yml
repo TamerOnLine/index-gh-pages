@@ -1,9 +1,9 @@
 site_name: index MD
-site_description: Professional documentation for your project using MkDocs
-site_author: Tamer
-site_url: https://tameronline.github.io/index-gh-pages/
+site_description: CLI tool to convert README.md to index.md and build MkDocs documentation.
+site_author: Tamer Hamad Faour
+site_url: https://username.github.io/index-gh-pages/
 
-repo_name: TamerOnLine/index-gh-pages
+repo_name: username/index-gh-pages
 repo_url: https://github.com/TamerOnLine/index-gh-pages
 edit_uri: edit/main/docs/
 
@@ -23,7 +23,7 @@ theme:
     - content.code.copy
     - toc.integrate
     - palette.toggle
-  copyright: "© 2025 Tamer. All rights reserved."
+  copyright: "© 2025 Tamer Hamad Faour. All rights reserved."
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: slate
@@ -43,7 +43,6 @@ nav:
       - Privacy Policy: sections/privacy.md
       - Terms of Service: sections/terms.md
       - Code of Conduct: CODE_OF_CONDUCT.md
-
 
 markdown_extensions:
   - admonition

@@ -1,9 +1,21 @@
 📁 index-gh-pages/
+├── 📁 dist/
+│   ├── index_gh_pages-0.1.0-py3-none-any.whl
+│   └── index_gh_pages-0.1.0.tar.gz
 ├── 📁 index_gh_pages/
 │   ├── __init__.py
+│   ├── builder.py
 │   ├── cli.py
+│   ├── core.py
 │   ├── mkdocs.yml
 │   └── utils.py
+├── 📁 index_gh_pages.egg-info/
+│   ├── PKG-INFO
+│   ├── SOURCES.txt
+│   ├── dependency_links.txt
+│   ├── entry_points.txt
+│   ├── requires.txt
+│   └── top_level.txt
 ├── 📁 scripts/
 │   ├── build_all.py
 │   ├── prepare_docs.py
@@ -14,7 +26,11 @@
 ├── .gitignore
 ├── CODE_OF_CONDUCT.md
 ├── LICENSE
+├── MANIFEST.in
 ├── README.md
 ├── create-venv.py
+├── publish.py
+├── publish_test.py
 ├── pyproject.toml
-└── requirements.txt
+├── requirements.txt
+└── setup.py

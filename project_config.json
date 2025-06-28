@@ -1,0 +1,27 @@
+{
+    "name": "index-gh-pages",
+    "version": "0.1.6",
+    "description": "CLI tool to convert README.md to index.md and build MkDocs documentation.",
+    "author": "Tamer Hamad Faour",
+    "author_email": "info@denkengewinnen.com",
+    "url": "https://github.com/TamerOnLine/index-gh-pages",
+    "python_version": ">=3.8",
+    "install_requires": [
+        "mkdocs",
+        "mkdocs-material",
+        "mkdocs-awesome-pages-plugin",
+        "mkdocs-git-revision-date-plugin",
+        "mkdocs-macros-plugin"
+    ],
+    "console_scripts": [
+        "indexgh = index_gh_pages.cli:main"
+    ],
+    "include_files": [
+        "README.md",
+        "LICENSE"
+    ],
+    "include_patterns": [
+        "index_gh_pages/*.yml",
+        "screenshots/*.gif"
+    ]
+}

@@ -27,9 +27,13 @@ print("Upgrading pip...")
 subprocess.run([python_path, "-m", "pip", "install", "--upgrade", "pip"], check=True)
 
 # 📦 Install packages from requirements.txt if it exists
-requirements_file = "requirements.txt"
-if os.path.exists(requirements_file):
-    print(f"Installing packages from {requirements_file}...")
-    subprocess.run([python_path, "-m", "pip", "install", "-r", requirements_file], check=True)
-else:
-    print("No requirements.txt file found. Skipping package installation.")
+def install_requirements(file_name):
+    if os.path.exists(file_name):
+        print(f"📦 Installing packages from {file_name}...")
+        subprocess.run([python_path, "-m", "pip", "install", "-r", file_name], check=True)
+    else:
+        print(f"⚠️ No {file_name} file found. Skipping.")
+
+install_requirements("requirements.txt")
+install_requirements("dev-requirements.txt")
+
