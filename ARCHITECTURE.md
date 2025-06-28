@@ -1,32 +1,62 @@
-# Project Architecture
+# 🏗️ System Architecture – index-gh-pages
 
-This document describes the overall architecture and flow of the `index-gh-pages` CLI tool.
+This document describes the internal architecture and execution flow of the `indexgh` CLI tool.
 
-## Overview
+## 🎯 Overview
 
-The tool provides a simple and automated way to convert `README.md` to `index.md` and generate MkDocs documentation, with custom overrides and publishing support.
+`indexgh` is a CLI utility that transforms a `README.md` into `index.md`, prepares MkDocs documentation, and optionally deploys it to GitHub Pages.
 
-## Flow Diagram
+---
+
+## 🧭 Execution Flow
 
 ```mermaid
-graph TD
-    A[Start] --> B[Run CLI Tool: indexgh]
-    B --> C[Parse README.md]
-    C --> D[Generate index.md in /docs]
-    D --> E[Copy mkdocs.yml & overrides]
-    E --> F[Build site using MkDocs]
-    F --> G[Publish to GitHub Pages]
-    G --> H[Done]
+flowchart TD
+    A[🚀 Run indexgh CLI] --> B{🤔 User selects an option}
+    B -->|1| C[📦 Build documentation]
+    B -->|2| D[🧽 Prepare docs only]
+    B -->|3| E[🌐 Serve locally]
+    B -->|4| F[🚀 Deploy to GitHub Pages]
+    B -->|5| G[🔎 Show version]
+    C --> H[🛠️ Generate index.md]
+    C --> I[📄 Copy mkdocs.yml]
+    C --> J[🏗️ Run mkdocs build]
+    F --> K[🔁 Git add/commit/push to gh-pages branch]
 ```
 
-## Components
+## 🧩 Components
+cli.py: Entry point for the CLI, handles user choices.
 
-- `generate_project_config.py`: Extracts project metadata into a JSON config
-- `generate_setup_files.py`: Generates `setup.py` and `pyproject.toml` based on config
-- `generate_mkdocs_yml.py`: Dynamically generates `mkdocs.yml` using Jinja2 template
-- `publish.py`: Publishes site to GitHub Pages after successful build
+builder.py: Core logic for generating index.md, copying config, and building docs.
 
-## Notes
+publisher.py: Logic for GitHub Pages deployment.
 
-- Supports override files (e.g., custom theme, logo, favicon)
-- Easily extensible with plugins and additional templates
+project_config_template.json: Template for dynamic project configuration.
+
+mkdocs.yml: Dynamically generated MkDocs configuration file.
+
+📁 Folder Structure
+```plaintext
+index-gh-pages/
+
+├── cli.py
+├── builder.py
+├── publisher.py
+├── config/
+│   └── project_config_template.json
+├── templates/
+│   └── mkdocs.yml.j2
+├── screenshots/
+│   └── demo.gif
+└── ...
+└── README.md
+```
+
+## 📦 Output
+docs/index.md: Generated from README.md
+
+site/: Built MkDocs site
+
+gh-pages branch: Deployed static site
+
+
